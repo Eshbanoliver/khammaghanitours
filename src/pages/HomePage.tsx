@@ -29,7 +29,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenBooking }) => {
       <ServicesGrid onSelectService={(service) => onOpenBooking(service)} />
       <MissionVisionSection />
       <CoreValuesSection />
-      <WhyChooseUsSection />
+      <WhyChooseUsSection onOpenBooking={() => onOpenBooking()} />
       <CTASection onOpenBooking={() => onOpenBooking()} />
       <TestimonialsSection />
       <FAQSection />
