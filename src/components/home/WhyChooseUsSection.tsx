@@ -18,6 +18,10 @@ import {
 } from 'lucide-react';
 
 interface FeatureTheme {
+  cardBg: string;
+  borderColor: string;
+  shadowColor: string;
+  topBar: string;
   iconBg: string;
   iconColor: string;
   badge: string;
@@ -25,15 +29,96 @@ interface FeatureTheme {
 }
 
 const featureThemes: FeatureTheme[] = [
-  { iconBg: 'bg-amber-100/90 text-amber-600', iconColor: 'text-amber-600', badge: 'Verified', badgeBg: 'bg-amber-100 text-amber-800' },
-  { iconBg: 'bg-emerald-100/90 text-emerald-600', iconColor: 'text-emerald-600', badge: 'Best Fare', badgeBg: 'bg-emerald-100 text-emerald-800' },
-  { iconBg: 'bg-sky-100/90 text-sky-600', iconColor: 'text-sky-600', badge: '24/7 Active', badgeBg: 'bg-sky-100 text-sky-800' },
-  { iconBg: 'bg-purple-100/90 text-purple-600', iconColor: 'text-purple-600', badge: 'Hygienic', badgeBg: 'bg-purple-100 text-purple-800' },
-  { iconBg: 'bg-indigo-100/90 text-indigo-600', iconColor: 'text-indigo-600', badge: 'Flexible', badgeBg: 'bg-indigo-100 text-indigo-800' },
-  { iconBg: 'bg-rose-100/90 text-rose-600', iconColor: 'text-rose-600', badge: '100% Safe', badgeBg: 'bg-rose-100 text-rose-800' },
-  { iconBg: 'bg-cyan-100/90 text-cyan-600', iconColor: 'text-cyan-600', badge: 'Transparent', badgeBg: 'bg-cyan-100 text-cyan-800' },
-  { iconBg: 'bg-blue-100/90 text-blue-600', iconColor: 'text-blue-600', badge: 'Punctual', badgeBg: 'bg-blue-100 text-blue-800' },
-  { iconBg: 'bg-yellow-100/90 text-yellow-700', iconColor: 'text-yellow-700', badge: '10+ Yrs Exp', badgeBg: 'bg-yellow-100 text-yellow-800' },
+  {
+    cardBg: 'bg-gradient-to-br from-amber-50/90 via-white to-amber-100/40',
+    borderColor: 'border-amber-200/80 hover:border-amber-400',
+    shadowColor: 'shadow-lg shadow-amber-500/10 hover:shadow-2xl hover:shadow-amber-500/25',
+    topBar: 'bg-gradient-to-r from-amber-400 to-orange-500',
+    iconBg: 'bg-amber-100 text-amber-600',
+    iconColor: 'text-amber-600',
+    badge: 'Verified Drivers',
+    badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-emerald-100/40',
+    borderColor: 'border-emerald-200/80 hover:border-emerald-400',
+    shadowColor: 'shadow-lg shadow-emerald-500/10 hover:shadow-2xl hover:shadow-emerald-500/25',
+    topBar: 'bg-gradient-to-r from-emerald-400 to-teal-500',
+    iconBg: 'bg-emerald-100 text-emerald-600',
+    iconColor: 'text-emerald-600',
+    badge: 'Best Rates',
+    badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-sky-50/90 via-white to-sky-100/40',
+    borderColor: 'border-sky-200/80 hover:border-sky-400',
+    shadowColor: 'shadow-lg shadow-sky-500/10 hover:shadow-2xl hover:shadow-sky-500/25',
+    topBar: 'bg-gradient-to-r from-sky-400 to-blue-600',
+    iconBg: 'bg-sky-100 text-sky-600',
+    iconColor: 'text-sky-600',
+    badge: '24/7 Helpline',
+    badgeBg: 'bg-sky-100 text-sky-800 border-sky-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-purple-50/90 via-white to-purple-100/40',
+    borderColor: 'border-purple-200/80 hover:border-purple-400',
+    shadowColor: 'shadow-lg shadow-purple-500/10 hover:shadow-2xl hover:shadow-purple-500/25',
+    topBar: 'bg-gradient-to-r from-purple-400 to-indigo-600',
+    iconBg: 'bg-purple-100 text-purple-600',
+    iconColor: 'text-purple-600',
+    badge: 'Clean & Sanitized',
+    badgeBg: 'bg-purple-100 text-purple-800 border-purple-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-indigo-50/90 via-white to-indigo-100/40',
+    borderColor: 'border-indigo-200/80 hover:border-indigo-400',
+    shadowColor: 'shadow-lg shadow-indigo-500/10 hover:shadow-2xl hover:shadow-indigo-500/25',
+    topBar: 'bg-gradient-to-r from-indigo-400 to-blue-600',
+    iconBg: 'bg-indigo-100 text-indigo-600',
+    iconColor: 'text-indigo-600',
+    badge: 'Tailored Plans',
+    badgeBg: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-rose-50/90 via-white to-rose-100/40',
+    borderColor: 'border-rose-200/80 hover:border-rose-400',
+    shadowColor: 'shadow-lg shadow-rose-500/10 hover:shadow-2xl hover:shadow-rose-500/25',
+    topBar: 'bg-gradient-to-r from-rose-400 to-pink-600',
+    iconBg: 'bg-rose-100 text-rose-600',
+    iconColor: 'text-rose-600',
+    badge: '100% Safe',
+    badgeBg: 'bg-rose-100 text-rose-800 border-rose-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-cyan-50/90 via-white to-cyan-100/40',
+    borderColor: 'border-cyan-200/80 hover:border-cyan-400',
+    shadowColor: 'shadow-lg shadow-cyan-500/10 hover:shadow-2xl hover:shadow-cyan-500/25',
+    topBar: 'bg-gradient-to-r from-cyan-400 to-blue-500',
+    iconBg: 'bg-cyan-100 text-cyan-600',
+    iconColor: 'text-cyan-600',
+    badge: 'Zero Hidden Tolls',
+    badgeBg: 'bg-cyan-100 text-cyan-800 border-cyan-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-blue-50/90 via-white to-blue-100/40',
+    borderColor: 'border-blue-200/80 hover:border-blue-400',
+    shadowColor: 'shadow-lg shadow-blue-500/10 hover:shadow-2xl hover:shadow-blue-500/25',
+    topBar: 'bg-gradient-to-r from-blue-400 to-indigo-600',
+    iconBg: 'bg-blue-100 text-blue-600',
+    iconColor: 'text-blue-600',
+    badge: '10 Mins Early',
+    badgeBg: 'bg-blue-100 text-blue-800 border-blue-200',
+  },
+  {
+    cardBg: 'bg-gradient-to-br from-yellow-50/90 via-white to-amber-100/40',
+    borderColor: 'border-yellow-200/80 hover:border-yellow-400',
+    shadowColor: 'shadow-lg shadow-yellow-500/10 hover:shadow-2xl hover:shadow-yellow-500/25',
+    topBar: 'bg-gradient-to-r from-yellow-400 to-amber-500',
+    iconBg: 'bg-yellow-100 text-yellow-700',
+    iconColor: 'text-yellow-700',
+    badge: '10+ Yrs Exp',
+    badgeBg: 'bg-yellow-100 text-yellow-800 border-yellow-200',
+  },
 ];
 
 const whyIcons: Record<string, (cls: string) => React.ReactNode> = {
@@ -78,10 +163,10 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-                className="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-7 border border-slate-200/90 shadow-md hover:shadow-2xl hover:border-sky-300 hover:-translate-y-2 transition-all duration-400 flex flex-col justify-between overflow-hidden"
+                className={`group relative ${theme.cardBg} backdrop-blur-xl rounded-3xl p-7 border ${theme.borderColor} ${theme.shadowColor} hover:-translate-y-2 transition-all duration-400 flex flex-col justify-between overflow-hidden`}
               >
-                {/* Decorative Top Accent Glow */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-sky-400/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
+                {/* Top Accent Bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 ${theme.topBar}`} />
 
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -91,13 +176,13 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }
                     </div>
 
                     {/* Trust Pill Tag */}
-                    <span className={`px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border border-slate-200/60 ${theme.badgeBg}`}>
+                    <span className={`px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border ${theme.badgeBg} shadow-2xs`}>
                       {theme.badge}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-black text-slate-900 group-hover:text-sky-600 transition-colors">
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-slate-800 transition-colors">
                       {item.title}
                     </h3>
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -108,9 +193,12 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-sky-600">
-                  <ShieldCheck className="w-4 h-4 text-sky-500" />
-                  <span>Guaranteed Service Quality</span>
+                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-700">
+                  <div className="flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <span>Guaranteed Quality</span>
+                  </div>
+                  <span className="text-[10px] font-black text-slate-400 uppercase">#0{index + 1}</span>
                 </div>
               </motion.div>
             );
