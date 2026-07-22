@@ -86,6 +86,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#0ea5e9" />
       <meta name="robots" content="index, follow" />
       <meta name="author" content={BUSINESS_INFO.name} />
 
