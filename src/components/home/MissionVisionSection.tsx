@@ -6,7 +6,7 @@ import { SectionHeading } from '../common/SectionHeading';
 
 export const MissionVisionSection: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 via-sky-50/20 to-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Dynamic Background Blobs */}
       <div className="absolute top-1/2 left-[-10%] w-[500px] h-[500px] bg-sky-300/20 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-300/20 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '-3s' }} />

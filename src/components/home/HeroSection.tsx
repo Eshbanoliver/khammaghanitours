@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-slate-50">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-white">
       {/* Background Image Slider with Light Overlay */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -39,8 +39,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/70 to-slate-50/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent" />
       </div>
 
       {/* Floating Liquid Background Blobs */}

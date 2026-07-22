@@ -54,7 +54,7 @@ interface WhyChooseUsProps {
 
 export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }) => {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 via-amber-50/20 to-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Decorative Mesh Orbs */}
       <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-amber-200/30 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[450px] h-[450px] bg-sky-200/30 rounded-full blur-[130px] pointer-events-none" />

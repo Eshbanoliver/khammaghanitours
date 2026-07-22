@@ -64,7 +64,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService, lim
   const displayedServices = limit ? filteredServices.slice(0, limit) : filteredServices;
 
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 relative overflow-hidden">
+    <section className="py-20 bg-white text-slate-900 relative overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl pointer-events-none" />

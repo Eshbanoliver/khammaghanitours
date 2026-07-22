@@ -111,7 +111,7 @@ const valueIcons: Record<string, (colorClass: string) => React.ReactNode> = {
 
 export const CoreValuesSection: React.FC = () => {
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Ambient Mesh Blobs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-6xl h-96 bg-gradient-to-r from-sky-200/30 via-purple-200/20 to-amber-200/30 blur-[130px] pointer-events-none" />
 
