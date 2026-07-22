@@ -162,7 +162,11 @@ export const Footer: React.FC = () => {
 
           {/* Exact Required Footer Copyright */}
           <p className="leading-relaxed">
-            ©️ Copyright 2026 | Khammaghani Travelling & Holidays Udaipur | All Rights Reserved | Powered by{' '}
+            ©️ Copyright 2026 |{' '}
+            <Link to="/" className="text-white hover:text-sky-400 font-bold transition-colors">
+              Khammaghani Travelling &amp; Holidays Udaipur
+            </Link>{' '}
+            | All Rights Reserved | Powered by{' '}
             <a
               href="https://www.futurexdigitalmarketing.com/"
               target="_blank"
