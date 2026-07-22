@@ -30,7 +30,7 @@ export const AboutSection: React.FC = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f1c?auto=format&fit=crop&w=1000&q=80"
+                src="/udaipur-travel-agency.png"
                 alt="City Palace Lake Pichola Udaipur Sightseeing"
                 className="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
               />
