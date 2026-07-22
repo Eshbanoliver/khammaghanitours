@@ -101,9 +101,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
               <Link
                 to="/services"
-                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-base rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-base rounded-2xl shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2.5 group"
               >
-                <Compass className="w-5 h-5 text-sky-600" />
+                <Compass className="w-5 h-5 text-slate-950 group-hover:rotate-45 transition-transform duration-500" />
                 <span>Explore Services</span>
               </Link>
             </motion.div>
