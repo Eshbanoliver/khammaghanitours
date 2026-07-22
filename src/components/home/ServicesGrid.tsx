@@ -41,19 +41,73 @@ const iconComponents: Record<string, React.ReactNode> = {
   Sliders: <Sliders className="w-6 h-6 text-violet-500" />,
 };
 
-const serviceCardOutlines = [
-  'border-2 border-sky-400/90 shadow-lg shadow-sky-500/10 hover:border-sky-500 hover:shadow-sky-500/25',
-  'border-2 border-amber-400/90 shadow-lg shadow-amber-500/10 hover:border-amber-500 hover:shadow-amber-500/25',
-  'border-2 border-emerald-400/90 shadow-lg shadow-emerald-500/10 hover:border-emerald-500 hover:shadow-emerald-500/25',
-  'border-2 border-purple-400/90 shadow-lg shadow-purple-500/10 hover:border-purple-500 hover:shadow-purple-500/25',
-  'border-2 border-indigo-400/90 shadow-lg shadow-indigo-500/10 hover:border-indigo-500 hover:shadow-indigo-500/25',
-  'border-2 border-rose-400/90 shadow-lg shadow-rose-500/10 hover:border-rose-500 hover:shadow-rose-500/25',
-  'border-2 border-cyan-400/90 shadow-lg shadow-cyan-500/10 hover:border-cyan-500 hover:shadow-cyan-500/25',
-  'border-2 border-orange-400/90 shadow-lg shadow-orange-500/10 hover:border-orange-500 hover:shadow-orange-500/25',
-  'border-2 border-blue-500/90 shadow-lg shadow-blue-500/10 hover:border-blue-600 hover:shadow-blue-500/25',
-  'border-2 border-teal-400/90 shadow-lg shadow-teal-500/10 hover:border-teal-500 hover:shadow-teal-500/25',
-  'border-2 border-fuchsia-400/90 shadow-lg shadow-fuchsia-500/10 hover:border-fuchsia-500 hover:shadow-fuchsia-500/25',
-  'border-2 border-yellow-400/90 shadow-lg shadow-yellow-500/10 hover:border-yellow-500 hover:shadow-yellow-500/25',
+interface ServiceCardTheme {
+  borderColor: string;
+  shadowColor: string;
+  topBarGradient: string;
+}
+
+const serviceCardThemes: ServiceCardTheme[] = [
+  {
+    borderColor: '#0ea5e9', // Sky Blue
+    shadowColor: '0 12px 28px -5px rgba(14, 165, 233, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-sky-400 to-blue-600',
+  },
+  {
+    borderColor: '#f59e0b', // Amber Gold
+    shadowColor: '0 12px 28px -5px rgba(245, 158, 11, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-amber-400 to-orange-500',
+  },
+  {
+    borderColor: '#10b981', // Emerald Green
+    shadowColor: '0 12px 28px -5px rgba(16, 185, 129, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-emerald-400 to-teal-600',
+  },
+  {
+    borderColor: '#a855f7', // Purple
+    shadowColor: '0 12px 28px -5px rgba(168, 85, 247, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-purple-400 to-indigo-600',
+  },
+  {
+    borderColor: '#f43f5e', // Rose Pink
+    shadowColor: '0 12px 28px -5px rgba(244, 63, 94, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-rose-400 to-pink-600',
+  },
+  {
+    borderColor: '#6366f1', // Royal Indigo
+    shadowColor: '0 12px 28px -5px rgba(99, 102, 241, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-indigo-400 to-blue-600',
+  },
+  {
+    borderColor: '#06b6d4', // Bright Cyan
+    shadowColor: '0 12px 28px -5px rgba(6, 182, 212, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-cyan-400 to-blue-500',
+  },
+  {
+    borderColor: '#f97316', // Warm Orange
+    shadowColor: '0 12px 28px -5px rgba(249, 115, 22, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-orange-400 to-amber-500',
+  },
+  {
+    borderColor: '#2563eb', // Royal Blue
+    shadowColor: '0 12px 28px -5px rgba(37, 99, 235, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-blue-500 to-indigo-600',
+  },
+  {
+    borderColor: '#14b8a6', // Mint Teal
+    shadowColor: '0 12px 28px -5px rgba(20, 184, 166, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-teal-400 to-emerald-600',
+  },
+  {
+    borderColor: '#d946ef', // Fuchsia Magenta
+    shadowColor: '0 12px 28px -5px rgba(217, 70, 239, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-fuchsia-400 to-pink-600',
+  },
+  {
+    borderColor: '#eab308', // Yellow Gold
+    shadowColor: '0 12px 28px -5px rgba(234, 179, 8, 0.3)',
+    topBarGradient: 'bg-gradient-to-r from-yellow-400 to-amber-500',
+  },
 ];
 
 interface ServicesGridProps {
@@ -114,7 +168,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService, lim
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedServices.map((service, index) => {
-            const outlineStyle = serviceCardOutlines[index % serviceCardOutlines.length];
+            const theme = serviceCardThemes[index % serviceCardThemes.length];
             return (
               <motion.div
                 key={service.id}
@@ -122,8 +176,14 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService, lim
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                className={`glass-card bg-white rounded-3xl overflow-hidden ${outlineStyle} hover:-translate-y-2 transition-all duration-500 flex flex-col group`}
+                style={{
+                  border: `3px solid ${theme.borderColor}`,
+                  boxShadow: theme.shadowColor,
+                }}
+                className="relative bg-white rounded-3xl overflow-hidden hover:-translate-y-2.5 transition-all duration-400 flex flex-col group"
               >
+                {/* Top Accent Gradient Bar */}
+                <div className={`h-1.5 w-full ${theme.topBarGradient}`} />
                 {/* Card Image Banner */}
                 <div className="relative h-52 overflow-hidden">
                   <img
