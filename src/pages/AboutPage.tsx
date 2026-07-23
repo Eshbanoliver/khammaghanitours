@@ -7,7 +7,7 @@ import { CoreValuesSection } from '../components/home/CoreValuesSection';
 import { WhyChooseUsSection } from '../components/home/WhyChooseUsSection';
 import { CTASection } from '../components/home/CTASection';
 import { ABOUT_TEXT } from '../data/travelData';
-import { Sparkles, Quote, ShieldCheck, Award, Clock, HeartHandshake, ArrowRight, Star } from 'lucide-react';
+import { Sparkles, Quote, ShieldCheck, Award, Clock, HeartHandshake, ArrowRight, Star, Users, Car, CheckCircle2, Fuel } from 'lucide-react';
 
 interface AboutPageProps {
   onOpenBooking: () => void;
@@ -233,9 +233,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* Fleet Showcase */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Fleet Showcase - Creative & Interactive */}
+      <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
+        {/* Background Mesh Accents */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeading
             badge="Pristine Fleet"
             title="Vehicles Built For Modern Travel Comfort"
@@ -243,52 +247,134 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
             theme="dark"
           />
 
+          {/* Key Fleet Assurance Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+            {[
+              { icon: ShieldCheck, text: '100% Sanitized & Disinfected' },
+              { icon: Car, text: 'Dual AC Climate Control' },
+              { icon: Fuel, text: 'All-India Tourist Permitted' },
+              { icon: Users, text: 'Experienced Uniformed Chauffeurs' },
+            ].map((assurance, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/80 border border-slate-800 rounded-full text-xs font-semibold text-sky-300 backdrop-blur-md shadow-sm"
+              >
+                <assurance.icon className="w-4 h-4 text-amber-400" />
+                <span>{assurance.text}</span>
+              </div>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 name: 'AC Executive Sedans',
                 model: 'Swift Dzire / Toyota Etios',
-                capacity: '4 Passengers + Driver',
+                capacity: '4 Passengers + 1 Driver',
+                luggage: '2 Large + 2 Small Bags',
                 ideal: 'City Tours & Airport Drops',
-                image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+                tag: 'Economical & Swift',
+                badgeColor: 'from-sky-500 to-blue-600',
+                image: '/jodhpur-taxi.png',
+                fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Luxury Premium SUVs',
                 model: 'Toyota Innova Crysta',
-                capacity: '6-7 Passengers + Driver',
+                capacity: '6-7 Passengers + 1 Driver',
+                luggage: '4 Large Bags',
                 ideal: 'Family Trips & Mount Abu Rides',
+                tag: 'Most Popular Choice',
+                badgeColor: 'from-amber-400 to-orange-500 text-slate-950',
                 image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Grand Family SUVs',
                 model: 'Mahindra XUV700 / Fortuner',
-                capacity: '6 Passengers + Driver',
+                capacity: '6 Passengers + 1 Driver',
+                luggage: '3 Large Bags',
                 ideal: 'VIP Travel & Outstation Tours',
+                tag: 'Royal VIP Comfort',
+                badgeColor: 'from-purple-500 to-indigo-600',
                 image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Luxury Tempo Travellers',
                 model: '12 / 17 / 26 Seater AC',
                 capacity: 'Large Groups & Delegations',
+                luggage: 'Spacious Rear Boot',
                 ideal: 'Group Rajasthan Tours',
+                tag: 'Group Travel Leader',
+                badgeColor: 'from-emerald-400 to-teal-600',
                 image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80',
               },
             ].map((fleet, idx) => (
-              <div key={idx} className="glass-dark rounded-3xl overflow-hidden border border-white/10 p-5 space-y-4">
-                <img
-                  src={fleet.image}
-                  alt={fleet.name}
-                  className="w-full h-44 object-cover rounded-2xl"
-                />
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group relative bg-slate-900/90 rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 shadow-xl hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-500 flex flex-col justify-between"
+              >
                 <div>
-                  <h4 className="font-extrabold text-lg text-white">{fleet.name}</h4>
-                  <p className="text-xs text-sky-400 font-bold">{fleet.model}</p>
+                  {/* Image Container with Floating Pill */}
+                  <div className="relative h-52 overflow-hidden bg-slate-950">
+                    <img
+                      src={fleet.image}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = fleet.fallback;
+                      }}
+                      alt={fleet.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
+                    
+                    <span className={`absolute top-3 right-3 px-3 py-1 bg-gradient-to-r ${fleet.badgeColor} rounded-full text-[11px] font-black uppercase tracking-wider shadow-md`}>
+                      {fleet.tag}
+                    </span>
+                  </div>
+
+                  {/* Body Content */}
+                  <div className="p-6 space-y-4">
+                    <div>
+                      <h4 className="font-extrabold text-xl text-white group-hover:text-sky-300 transition-colors">
+                        {fleet.name}
+                      </h4>
+                      <p className="text-xs text-amber-400 font-bold mt-0.5">{fleet.model}</p>
+                    </div>
+
+                    <div className="space-y-2 border-t border-slate-800/80 pt-3 text-xs text-slate-300 font-medium">
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-sky-400 shrink-0" />
+                        <span>{fleet.capacity}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Car className="w-4 h-4 text-amber-400 shrink-0" />
+                        <span>Luggage: {fleet.luggage}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>Ideal for: {fleet.ideal}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-xs text-slate-300 space-y-1 border-t border-white/10 pt-3">
-                  <p>👥 <span className="font-semibold">{fleet.capacity}</span></p>
-                  <p>✨ <span className="font-semibold">{fleet.ideal}</span></p>
+
+                {/* Card Footer Action */}
+                <div className="p-6 pt-0">
+                  <button
+                    onClick={onOpenBooking}
+                    className="w-full py-3 px-4 bg-slate-800 hover:bg-gradient-to-r hover:from-sky-500 hover:to-indigo-600 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 group-hover:shadow-sky-500/20"
+                  >
+                    <span>Reserve Vehicle</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-amber-400" />
+                  </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
