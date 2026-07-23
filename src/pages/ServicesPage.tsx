@@ -163,41 +163,111 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenBooking }) => 
       {/* Main Filterable Services Section */}
       <ServicesGrid onSelectService={(service) => onOpenBooking(service)} />
 
-      {/* Service Guarantees */}
-      <section className="py-16 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            
-            <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-md">
-              <div className="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <ShieldCheck className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">GPS Tracked Safety</h3>
-              <p className="text-slate-600 text-sm">
-                All taxis are equipped with real-time tracking, emergency assistance, and vetted drivers.
-              </p>
-            </div>
+      {/* Service Guarantees - Ultra Premium & Eye-Catching */}
+      <section className="py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white relative overflow-hidden">
+        {/* Glowing Ambient Mesh Accents */}
+        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-md">
-              <div className="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">On-Time Pickup Guarantee</h3>
-              <p className="text-slate-600 text-sm">
-                We value your time. Drivers arrive 10 minutes prior to scheduled departure time.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-sky-500/20 via-amber-500/20 to-emerald-500/20 border border-sky-400/30 rounded-full text-xs font-black uppercase tracking-widest text-sky-300">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>Why Travelers Trust Us</span>
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+              Royal Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-amber-300 to-emerald-400">Guarantees</span>
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base font-medium">
+              We go beyond standard taxi bookings to provide unmatched safety, punctuality, and upfront pricing.
+            </p>
+          </div>
 
-            <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-md">
-              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Transparent Flat Rates</h3>
-              <p className="text-slate-600 text-sm">
-                Clear all-inclusive quotes with driver allowance, fuel, and state taxes specified.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: ShieldCheck,
+                badge: 'Real-Time Monitoring',
+                badgeStyle: 'bg-sky-500/20 text-sky-300 border-sky-400/30',
+                title: 'GPS Tracked Safety',
+                description: 'All taxis are equipped with real-time tracking, emergency SOS assistance, and vetted, background-verified drivers.',
+                pill: '100% SOS Enabled',
+                gradientBorder: 'hover:border-sky-400 hover:shadow-sky-500/20',
+                topGradient: 'bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600',
+                iconBox: 'bg-gradient-to-tr from-sky-400 to-blue-600 text-white shadow-sky-500/40',
+                glowOrb: 'bg-sky-500/10',
+              },
+              {
+                icon: Clock,
+                badge: 'Zero Waiting Time',
+                badgeStyle: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
+                title: 'On-Time Pickup Guarantee',
+                description: 'We value your time. Our professional drivers arrive 10 minutes prior to your scheduled departure time, guaranteed.',
+                pill: '10 Min Prior Arrival',
+                gradientBorder: 'hover:border-amber-400 hover:shadow-amber-500/20',
+                topGradient: 'bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500',
+                iconBox: 'bg-gradient-to-tr from-amber-400 to-orange-500 text-slate-950 shadow-amber-500/40',
+                glowOrb: 'bg-amber-500/10',
+              },
+              {
+                icon: CheckCircle2,
+                badge: 'No Hidden Surprises',
+                badgeStyle: 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30',
+                title: 'Transparent Flat Rates',
+                description: 'Clear all-inclusive fixed quotes upfront with driver allowance, fuel costs, and state taxes specified with zero surprise charges.',
+                pill: 'Tolls & Tax Included',
+                gradientBorder: 'hover:border-emerald-400 hover:shadow-emerald-500/20',
+                topGradient: 'bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500',
+                iconBox: 'bg-gradient-to-tr from-emerald-400 to-teal-600 text-white shadow-emerald-500/40',
+                glowOrb: 'bg-emerald-500/10',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className={`relative group bg-slate-900/90 rounded-3xl p-8 border border-slate-800 ${item.gradientBorder} shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden hover:-translate-y-2`}
+              >
+                {/* Top Accent Gradient Line */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 ${item.topGradient}`} />
 
+                {/* Subtle Card Background Glow */}
+                <div className={`absolute -right-10 -bottom-10 w-40 h-40 rounded-full ${item.glowOrb} blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none`} />
+
+                <div>
+                  {/* Top Badge & Icon Header */}
+                  <div className="flex items-center justify-between mb-8">
+                    <div className={`w-16 h-16 rounded-2xl ${item.iconBox} shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+                      <item.icon className="w-8 h-8" />
+                    </div>
+                    <span className={`px-3 py-1.5 rounded-full border text-[11px] font-black uppercase tracking-wider ${item.badgeStyle}`}>
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <h3 className="text-2xl font-black text-white mb-3 group-hover:text-amber-300 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed font-medium">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Bottom Assurance Tag Pill */}
+                <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-between">
+                  <span className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 group-hover:text-amber-400 transition-colors">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    {item.pill}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-slate-800 group-hover:bg-amber-400 group-hover:text-slate-950 text-slate-400 flex items-center justify-center transition-all duration-300">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
