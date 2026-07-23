@@ -188,6 +188,9 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService, lim
                 <div className="relative h-52 overflow-hidden">
                   <img
                     src={service.image}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80";
+                    }}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

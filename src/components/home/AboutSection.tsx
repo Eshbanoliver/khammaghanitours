@@ -31,7 +31,10 @@ export const AboutSection: React.FC = () => {
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <img
                 src="/udaipur-travel-agency.png"
-                alt="City Palace Lake Pichola Udaipur Sightseeing"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80";
+                }}
+                alt="Best Travel Agency in Udaipur"
                 className="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
