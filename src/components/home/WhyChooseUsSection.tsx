@@ -15,122 +15,20 @@ import {
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
+  Users,
+  Car,
 } from 'lucide-react';
 
-interface FeatureTheme {
-  cardBg: string;
-  borderColor: string;
-  shadowColor: string;
-  topBar: string;
-  iconBg: string;
-  iconColor: string;
-  badge: string;
-  badgeBg: string;
-}
-
-const featureThemes: FeatureTheme[] = [
-  {
-    cardBg: 'bg-gradient-to-br from-amber-50/90 via-white to-amber-100/40',
-    borderColor: 'border-amber-200/80 hover:border-amber-400',
-    shadowColor: 'shadow-lg shadow-amber-500/10 hover:shadow-2xl hover:shadow-amber-500/25',
-    topBar: 'bg-gradient-to-r from-amber-400 to-orange-500',
-    iconBg: 'bg-amber-100 text-amber-600',
-    iconColor: 'text-amber-600',
-    badge: 'Verified Drivers',
-    badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-emerald-100/40',
-    borderColor: 'border-emerald-200/80 hover:border-emerald-400',
-    shadowColor: 'shadow-lg shadow-emerald-500/10 hover:shadow-2xl hover:shadow-emerald-500/25',
-    topBar: 'bg-gradient-to-r from-emerald-400 to-teal-500',
-    iconBg: 'bg-emerald-100 text-emerald-600',
-    iconColor: 'text-emerald-600',
-    badge: 'Best Rates',
-    badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-sky-50/90 via-white to-sky-100/40',
-    borderColor: 'border-sky-200/80 hover:border-sky-400',
-    shadowColor: 'shadow-lg shadow-sky-500/10 hover:shadow-2xl hover:shadow-sky-500/25',
-    topBar: 'bg-gradient-to-r from-sky-400 to-blue-600',
-    iconBg: 'bg-sky-100 text-sky-600',
-    iconColor: 'text-sky-600',
-    badge: '24/7 Helpline',
-    badgeBg: 'bg-sky-100 text-sky-800 border-sky-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-purple-50/90 via-white to-purple-100/40',
-    borderColor: 'border-purple-200/80 hover:border-purple-400',
-    shadowColor: 'shadow-lg shadow-purple-500/10 hover:shadow-2xl hover:shadow-purple-500/25',
-    topBar: 'bg-gradient-to-r from-purple-400 to-indigo-600',
-    iconBg: 'bg-purple-100 text-purple-600',
-    iconColor: 'text-purple-600',
-    badge: 'Clean & Sanitized',
-    badgeBg: 'bg-purple-100 text-purple-800 border-purple-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-indigo-50/90 via-white to-indigo-100/40',
-    borderColor: 'border-indigo-200/80 hover:border-indigo-400',
-    shadowColor: 'shadow-lg shadow-indigo-500/10 hover:shadow-2xl hover:shadow-indigo-500/25',
-    topBar: 'bg-gradient-to-r from-indigo-400 to-blue-600',
-    iconBg: 'bg-indigo-100 text-indigo-600',
-    iconColor: 'text-indigo-600',
-    badge: 'Tailored Plans',
-    badgeBg: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-rose-50/90 via-white to-rose-100/40',
-    borderColor: 'border-rose-200/80 hover:border-rose-400',
-    shadowColor: 'shadow-lg shadow-rose-500/10 hover:shadow-2xl hover:shadow-rose-500/25',
-    topBar: 'bg-gradient-to-r from-rose-400 to-pink-600',
-    iconBg: 'bg-rose-100 text-rose-600',
-    iconColor: 'text-rose-600',
-    badge: '100% Safe',
-    badgeBg: 'bg-rose-100 text-rose-800 border-rose-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-cyan-50/90 via-white to-cyan-100/40',
-    borderColor: 'border-cyan-200/80 hover:border-cyan-400',
-    shadowColor: 'shadow-lg shadow-cyan-500/10 hover:shadow-2xl hover:shadow-cyan-500/25',
-    topBar: 'bg-gradient-to-r from-cyan-400 to-blue-500',
-    iconBg: 'bg-cyan-100 text-cyan-600',
-    iconColor: 'text-cyan-600',
-    badge: 'Zero Hidden Tolls',
-    badgeBg: 'bg-cyan-100 text-cyan-800 border-cyan-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-blue-50/90 via-white to-blue-100/40',
-    borderColor: 'border-blue-200/80 hover:border-blue-400',
-    shadowColor: 'shadow-lg shadow-blue-500/10 hover:shadow-2xl hover:shadow-blue-500/25',
-    topBar: 'bg-gradient-to-r from-blue-400 to-indigo-600',
-    iconBg: 'bg-blue-100 text-blue-600',
-    iconColor: 'text-blue-600',
-    badge: '10 Mins Early',
-    badgeBg: 'bg-blue-100 text-blue-800 border-blue-200',
-  },
-  {
-    cardBg: 'bg-gradient-to-br from-yellow-50/90 via-white to-amber-100/40',
-    borderColor: 'border-yellow-200/80 hover:border-yellow-400',
-    shadowColor: 'shadow-lg shadow-yellow-500/10 hover:shadow-2xl hover:shadow-yellow-500/25',
-    topBar: 'bg-gradient-to-r from-yellow-400 to-amber-500',
-    iconBg: 'bg-yellow-100 text-yellow-700',
-    iconColor: 'text-yellow-700',
-    badge: '10+ Yrs Exp',
-    badgeBg: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-  },
-];
-
 const whyIcons: Record<string, (cls: string) => React.ReactNode> = {
-  Award: (cls) => <Award className={`w-6 h-6 ${cls}`} />,
-  PiggyBank: (cls) => <PiggyBank className={`w-6 h-6 ${cls}`} />,
-  Headphones: (cls) => <Headphones className={`w-6 h-6 ${cls}`} />,
-  Sparkles: (cls) => <Sparkles className={`w-6 h-6 ${cls}`} />,
-  SlidersHorizontal: (cls) => <SlidersHorizontal className={`w-6 h-6 ${cls}`} />,
-  ShieldAlert: (cls) => <ShieldAlert className={`w-6 h-6 ${cls}`} />,
-  FileCheck: (cls) => <FileCheck className={`w-6 h-6 ${cls}`} />,
-  Clock4: (cls) => <Clock4 className={`w-6 h-6 ${cls}`} />,
-  Star: (cls) => <Star className={`w-6 h-6 ${cls}`} />,
+  Award: (cls) => <Award className={`w-5 h-5 ${cls}`} />,
+  PiggyBank: (cls) => <PiggyBank className={`w-5 h-5 ${cls}`} />,
+  Headphones: (cls) => <Headphones className={`w-5 h-5 ${cls}`} />,
+  Sparkles: (cls) => <Sparkles className={`w-5 h-5 ${cls}`} />,
+  SlidersHorizontal: (cls) => <SlidersHorizontal className={`w-5 h-5 ${cls}`} />,
+  ShieldAlert: (cls) => <ShieldAlert className={`w-5 h-5 ${cls}`} />,
+  FileCheck: (cls) => <FileCheck className={`w-5 h-5 ${cls}`} />,
+  Clock4: (cls) => <Clock4 className={`w-5 h-5 ${cls}`} />,
+  Star: (cls) => <Star className={`w-5 h-5 ${cls}`} />,
 };
 
 interface WhyChooseUsProps {
@@ -139,10 +37,10 @@ interface WhyChooseUsProps {
 
 export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }) => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background Decorative Mesh Orbs */}
-      <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-amber-200/30 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-[450px] h-[450px] bg-sky-200/30 rounded-full blur-[130px] pointer-events-none" />
+    <section className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      {/* Background Ambient Glowing Orbs */}
+      <div className="absolute top-1/3 left-[-10%] w-[500px] h-[500px] bg-amber-200/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] bg-sky-200/30 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
@@ -152,89 +50,173 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsProps> = ({ onOpenBooking }
           theme="light"
         />
 
-        {/* 3x3 Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {WHY_CHOOSE_US.map((item, index) => {
-            const theme = featureThemes[index % featureThemes.length];
-            return (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-                className={`group relative ${theme.cardBg} backdrop-blur-xl rounded-3xl p-7 border ${theme.borderColor} ${theme.shadowColor} hover:-translate-y-2 transition-all duration-400 flex flex-col justify-between overflow-hidden`}
-              >
-                {/* Top Accent Bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1.5 ${theme.topBar}`} />
+        {/* Main Split Showcase: Featured Visual Image + Why Choose Us Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-12">
+          
+          {/* Left Column: Premium Visual Image Card Stack with Floating Badges */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-5 relative"
+          >
+            {/* Outer Decorative Gradient Border */}
+            <div className="relative rounded-3xl p-2 bg-gradient-to-br from-amber-400 via-orange-400 to-sky-500 shadow-2xl">
+              <div className="relative rounded-[22px] overflow-hidden bg-slate-950">
+                <img
+                  src="/images/udaipur_lake_palace.png"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1615836245337-f5b9b2303f1c?auto=format&fit=crop&w=1200&q=80";
+                  }}
+                  alt="Udaipur Lake Palace Sightseeing"
+                  className="w-full h-[460px] sm:h-[540px] object-cover hover:scale-105 transition-transform duration-700 opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    {/* Icon Container */}
-                    <div className={`p-3.5 rounded-2xl ${theme.iconBg} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-sm`}>
-                      {whyIcons[item.iconName]?.(theme.iconColor)}
+                {/* Floating Badge Top-Right */}
+                <div className="absolute top-5 right-5 px-4 py-2 bg-slate-900/90 backdrop-blur-md rounded-2xl border border-amber-400/40 shadow-xl flex items-center gap-2.5">
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <span className="text-xs font-black text-white">5.0 Star Rated Service</span>
+                </div>
+
+                {/* Floating Badge Middle-Left */}
+                <div className="hidden sm:flex absolute top-1/3 -left-4 px-4 py-3 bg-white/95 backdrop-blur-md rounded-2xl border border-sky-300 shadow-2xl items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold shrink-0">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-black text-slate-900">100% Transparent Fares</span>
+                    <span className="text-[11px] font-semibold text-slate-600">Zero Toll Surprises</span>
+                  </div>
+                </div>
+
+                {/* Bottom Glass Card Overlay */}
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-slate-900/85 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl">
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-slate-950 font-black text-xl shrink-0 shadow-lg">
+                      #1
                     </div>
-
-                    {/* Trust Pill Tag */}
-                    <span className={`px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border ${theme.badgeBg} shadow-2xs`}>
-                      {theme.badge}
-                    </span>
+                    <div>
+                      <h4 className="font-extrabold text-white text-sm sm:text-base">Top Rated Udaipur Travel Partner</h4>
+                      <p className="text-xs text-sky-300 font-semibold">15,000+ Happy Tourists &amp; Families</p>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-xl font-black text-slate-900 group-hover:text-slate-800 transition-colors">
+            {/* Quick Mini Highlights Bar Under Image */}
+            <div className="grid grid-cols-2 gap-3 pt-6">
+              <div className="p-3 bg-white rounded-2xl border border-slate-200/80 flex items-center gap-3 shadow-sm">
+                <Users className="w-5 h-5 text-amber-500 shrink-0" />
+                <div>
+                  <h5 className="font-extrabold text-xs text-slate-900">Verified Chauffeurs</h5>
+                  <p className="text-[11px] text-slate-500">Local Route Experts</p>
+                </div>
+              </div>
+              <div className="p-3 bg-white rounded-2xl border border-slate-200/80 flex items-center gap-3 shadow-sm">
+                <Car className="w-5 h-5 text-sky-500 shrink-0" />
+                <div>
+                  <h5 className="font-extrabold text-xs text-slate-900">Sanitized Cabs</h5>
+                  <p className="text-[11px] text-slate-500">Clean Dual AC Fleet</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Feature Points Grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {WHY_CHOOSE_US.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="group bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-sky-300 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="p-2.5 rounded-xl bg-slate-100 text-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors shadow-xs">
+                        {whyIcons[item.iconName]?.('group-hover:text-slate-950')}
+                      </div>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    </div>
+                    <h4 className="font-extrabold text-slate-900 text-base mb-1 group-hover:text-sky-600 transition-colors">
                       {item.title}
-                    </h3>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    </h4>
+                    <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-                    {item.description}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-slate-700">
-                  <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>Guaranteed Quality</span>
-                  </div>
-                  <span className="text-[10px] font-black text-slate-400 uppercase">#0{index + 1}</span>
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
 
-        {/* Bottom Callout Banner */}
-        {onOpenBooking && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-16 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6"
-          >
-            <div className="space-y-2 text-center md:text-left">
-              <span className="px-3.5 py-1 bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-widest rounded-full shadow-sm">
-                Ready to Experience Rajasthan?
+        {/* Bottom Banner with Background Image Overlay */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-800"
+        >
+          {/* Background Image with Dark Overlay */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/udaipur-sightseeing.png"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80";
+              }}
+              alt="Rajasthan Sightseeing Background"
+              className="w-full h-full object-cover opacity-25"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70" />
+          </div>
+
+          <div className="relative z-10 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+            <div className="space-y-2 text-center md:text-left max-w-2xl">
+              <span className="inline-block px-3.5 py-1 bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-widest rounded-full shadow-md">
+                Ready to Explore Udaipur &amp; Beyond?
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                Book Your Taxi &amp; Tour Package in Seconds
+              <h3 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                Book Your Cab &amp; Tour Package in Seconds
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium">
-                Best direct rates guaranteed. Zero hidden taxes, 100% sanitized luxury cabs &amp; local drivers.
+              <p className="text-xs sm:text-base text-slate-300 font-medium leading-relaxed">
+                Direct operator prices with zero hidden tolls. Experience 100% sanitized luxury cars &amp; expert local chauffeurs.
               </p>
             </div>
 
-            <button
-              onClick={onOpenBooking}
-              className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm rounded-2xl shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shrink-0"
-            >
-              <span>Get Instant Lowest Quote</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        )}
+            {onOpenBooking ? (
+              <button
+                onClick={onOpenBooking}
+                className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shrink-0"
+              >
+                <span>Get Instant Quote</span>
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            ) : (
+              <a
+                href="tel:07728096547"
+                className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-black text-sm sm:text-base rounded-2xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shrink-0"
+              >
+                <span>Call Desk: 077280 96547</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
