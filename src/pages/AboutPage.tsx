@@ -7,7 +7,7 @@ import { CoreValuesSection } from '../components/home/CoreValuesSection';
 import { WhyChooseUsSection } from '../components/home/WhyChooseUsSection';
 import { CTASection } from '../components/home/CTASection';
 import { ABOUT_TEXT } from '../data/travelData';
-import { CheckCircle2 } from 'lucide-react';
+import { Sparkles, Quote, ShieldCheck, Award, Clock, HeartHandshake, ArrowRight, Star } from 'lucide-react';
 
 interface AboutPageProps {
   onOpenBooking: () => void;
