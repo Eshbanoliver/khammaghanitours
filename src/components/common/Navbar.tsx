@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Compass, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { BUSINESS_INFO } from '../../data/travelData';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -49,11 +49,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-sky-400 via-blue-600 to-amber-500 p-0.5 shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
-            <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-              <Compass className="w-6 h-6 text-sky-600 group-hover:rotate-45 transition-transform duration-500" />
-            </div>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Khamma Ghani Travelling & Holidays Udaipur Logo"
+            className="w-12 h-12 sm:w-14 sm:h-14 object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+          />
           <div>
             <span className="block font-black text-lg sm:text-xl tracking-tight text-slate-900 leading-none">
               Khammaghani

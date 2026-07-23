@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Compass,
   MapPin,
   Phone,
   ArrowRight,
@@ -21,18 +20,18 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-amber-500 p-0.5 shadow-md">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                  <Compass className="w-5 h-5 text-sky-400" />
-                </div>
-              </div>
+            <Link to="/" className="flex items-center gap-3 group">
+              <img
+                src="/logo.png"
+                alt="Khamma Ghani Travelling & Holidays Udaipur Logo"
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain rounded-xl bg-white p-1 shadow-md group-hover:scale-105 transition-transform duration-300"
+              />
               <div>
                 <span className="block font-black text-lg tracking-tight text-white">
                   Khammaghani
                 </span>
                 <span className="text-[10px] font-bold text-amber-400 tracking-wider uppercase block">
-                  Travelling & Holidays Udaipur
+                  Travelling &amp; Holidays Udaipur
                 </span>
               </div>
             </Link>
