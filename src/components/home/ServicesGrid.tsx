@@ -240,10 +240,10 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onSelectService, lim
                   <div className="pt-2">
                     <button
                       onClick={() => onSelectService(service)}
-                      className="w-full py-3 bg-slate-100 hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-600 text-slate-800 hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl border border-slate-200 hover:border-transparent transition-all flex items-center justify-center gap-2"
+                      className={`w-full py-3 px-4 ${theme.topBarGradient} text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-xl hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2 group/btn`}
                     >
                       <span>Book Service / Details</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
