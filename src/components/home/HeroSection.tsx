@@ -1,30 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Compass, Calendar, Users, MapPin, ArrowRight, Star, ShieldCheck, Sparkles, Car, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
+import { Compass, Calendar, Users, MapPin, ArrowRight, Star, ShieldCheck, Sparkles, Car, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
 }
 
-const UDAIPUR_STOCK_SLIDES = [
+const CAR_STOCK_SLIDES = [
   {
-    image: '/images/udaipur_city_palace.png',
-    fallback: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=2000&q=85',
-    title: 'City Palace & Lake Pichola',
-    tag: 'Royal Heritage Landmark'
+    image: '/images/white_force_urbania.png',
+    fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85',
+    title: 'Luxury Force Urbania (White)',
+    tag: '10-17 Seater Executive Van'
   },
   {
-    image: '/images/udaipur_lake_palace.png',
-    fallback: 'https://images.unsplash.com/photo-1615836245337-f5b9b2303f1c?auto=format&fit=crop&w=2000&q=85',
-    title: 'Taj Lake Palace & Jag Mandir',
-    tag: 'Venice of the East'
+    image: '/images/white_swift_dzire.png',
+    fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85',
+    title: 'Maruti Suzuki Swift Dzire (White)',
+    tag: '4 Seater Premium AC Cab'
   },
   {
-    image: '/udaipur-sightseeing.png',
-    fallback: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2000&q=85',
-    title: 'Fateh Sagar & Sajjangarh Monsoon Palace',
-    tag: 'Panoramic Sunset Ghats'
+    image: '/images/white_innova_crysta.png',
+    fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2000&q=85',
+    title: 'Toyota Innova Crysta (White)',
+    tag: '6-7 Seater Luxury MPV'
+  },
+  {
+    image: '/images/white_tempo_traveller.png',
+    fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85',
+    title: 'Force Tempo Traveller (White)',
+    tag: '12-26 Seater Tourist Van'
   }
 ];
 
@@ -35,20 +41,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % UDAIPUR_STOCK_SLIDES.length);
+      setCurrentSlide((prev) => (prev + 1) % CAR_STOCK_SLIDES.length);
     }, 5000);
     return () => clearInterval(timer);
   }, [isPaused]);
 
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % UDAIPUR_STOCK_SLIDES.length);
+    setCurrentSlide((prev) => (prev + 1) % CAR_STOCK_SLIDES.length);
   };
 
   const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + UDAIPUR_STOCK_SLIDES.length) % UDAIPUR_STOCK_SLIDES.length);
+    setCurrentSlide((prev) => (prev - 1 + CAR_STOCK_SLIDES.length) % CAR_STOCK_SLIDES.length);
   };
 
-  const activeSlide = UDAIPUR_STOCK_SLIDES[currentSlide];
+  const activeSlide = CAR_STOCK_SLIDES[currentSlide];
 
   return (
     <section 
@@ -56,7 +62,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Stock Udaipur Image Slider */}
+      {/* Background White Indian Cars Image Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.img
@@ -70,14 +76,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
             animate={{ opacity: 0.85, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
-            alt={`Udaipur Stock Photo - ${activeSlide.title}`}
+            alt={`White Car Fleet - ${activeSlide.title}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
         
-        {/* Subtle vignette gradient for readable text without blue tint or heavy cover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent" />
+        {/* Subtle vignette gradient for readable text without heavy cover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -85,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           
           {/* Left Column: Hero Copy */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
-            {/* Top Pill Badge & Current Slide Landmark Tag */}
+            {/* Top Pill Badge & Current Slide Vehicle Tag */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -105,7 +111,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   exit={{ opacity: 0, x: 10 }}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/20 border border-amber-400/30 backdrop-blur-md rounded-full text-xs font-semibold text-amber-300"
                 >
-                  <Camera className="w-3.5 h-3.5 text-amber-400" />
+                  <Car className="w-3.5 h-3.5 text-amber-400" />
                   <span>{activeSlide.tag}</span>
                 </motion.div>
               </AnimatePresence>
@@ -131,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Travel with the most trusted Travel Agency in Udaipur offering luxury taxi services, custom holiday packages, local sightseeing tours, and premium car rentals.
+              Travel with the most trusted Travel Agency in Udaipur offering luxury white cabs, Force Urbania, Swift Dzire, Innova Crysta, and Tempo Travellers for local &amp; outstation tours.
             </motion.p>
 
             {/* Call to Action Buttons */}
@@ -179,11 +185,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Car className="w-4 h-4 text-sky-400" />
-                <span>100+ Clean Vehicles</span>
+                <span>100+ Clean White Cabs</span>
               </div>
             </motion.div>
 
-            {/* Interactive Image Slider Controls & Landmark Title */}
+            {/* Interactive Image Slider Controls & Vehicle Caption */}
             <div className="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 {/* Prev Button */}
@@ -206,7 +212,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
                 {/* Slide Dot Indicators */}
                 <div className="flex items-center gap-2 ml-2">
-                  {UDAIPUR_STOCK_SLIDES.map((_, idx) => (
+                  {CAR_STOCK_SLIDES.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
@@ -221,7 +227,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Landmark Caption Badge */}
+              {/* Vehicle Caption Badge */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -231,7 +237,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   transition={{ duration: 0.3 }}
                   className="text-center sm:text-right"
                 >
-                  <p className="text-xs text-amber-400/90 font-medium">Udaipur Stock Photo ({currentSlide + 1}/3)</p>
+                  <p className="text-xs text-amber-400/90 font-medium">White Fleet ({currentSlide + 1}/{CAR_STOCK_SLIDES.length})</p>
                   <p className="text-xs sm:text-sm font-bold text-white tracking-wide">{activeSlide.title}</p>
                 </motion.div>
               </AnimatePresence>
