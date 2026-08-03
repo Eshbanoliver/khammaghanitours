@@ -73,7 +73,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               (e.target as HTMLImageElement).src = activeSlide.fallback;
             }}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.85, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
             alt={`White Car Fleet - ${activeSlide.title}`}
@@ -81,9 +81,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           />
         </AnimatePresence>
         
-        {/* Subtle vignette gradient for readable text without heavy cover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-slate-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent" />
+        {/* Softened vignette gradient for enhanced image clarity & text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-950/15 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
