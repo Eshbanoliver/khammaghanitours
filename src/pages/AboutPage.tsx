@@ -275,8 +275,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
                 ideal: 'City Tours & Airport Drops',
                 tag: 'Economical & Swift',
                 badgeColor: 'from-sky-500 to-blue-600',
-                image: '/jodhpur-taxi.png',
-                fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+                image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Luxury Premium SUVs',
@@ -286,8 +286,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
                 ideal: 'Family Trips & Mount Abu Rides',
                 tag: 'Most Popular Choice',
                 badgeColor: 'from-amber-400 to-orange-500 text-slate-950',
-                image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
-                fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+                image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Grand Family SUVs',
@@ -297,8 +297,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
                 ideal: 'VIP Travel & Outstation Tours',
                 tag: 'Royal VIP Comfort',
                 badgeColor: 'from-purple-500 to-indigo-600',
-                image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80',
-                fallback: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80',
+                image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80',
               },
               {
                 name: 'Luxury Tempo Travellers',
@@ -308,8 +308,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenBooking }) => {
                 ideal: 'Group Rajasthan Tours',
                 tag: 'Group Travel Leader',
                 badgeColor: 'from-emerald-400 to-teal-600',
-                image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80',
-                fallback: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80',
+                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80',
+                fallback: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80',
               },
             ].map((fleet, idx) => (
               <motion.div

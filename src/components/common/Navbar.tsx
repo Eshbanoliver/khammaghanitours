@@ -44,25 +44,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       name: 'Force Urbania (White)',
       tag: '10-17 Seater Executive',
       image: '/images/white_force_urbania.png',
-      fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+      fallback: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=600&q=80',
     },
     {
       name: 'Toyota Innova Hycross',
       tag: '6-7 Seater Hybrid MPV',
       image: '/images/white_innova_hycross.png',
-      fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+      fallback: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80',
     },
     {
       name: 'Force Tempo Traveller',
       tag: '12-26 Seater Tourist Van',
       image: '/images/white_tempo_traveller.png',
-      fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+      fallback: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80',
     },
     {
       name: 'Toyota Innova Crysta',
       tag: '6-7 Seater Premium SUV',
       image: '/images/white_innova_crysta.png',
-      fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+      fallback: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
     },
   ];
 
