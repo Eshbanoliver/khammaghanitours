@@ -15,22 +15,22 @@ const CAR_STOCK_SLIDES = [
     tag: '10-17 Seater Executive Van'
   },
   {
-    image: '/images/white_swift_dzire.png',
-    fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85',
-    title: 'Maruti Suzuki Swift Dzire (White)',
-    tag: '4 Seater Premium AC Cab'
-  },
-  {
-    image: '/images/white_innova_crysta.png',
+    image: '/images/white_innova_hycross.png',
     fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2000&q=85',
-    title: 'Toyota Innova Crysta (White)',
-    tag: '6-7 Seater Luxury MPV'
+    title: 'Toyota Innova Hycross (White)',
+    tag: '6-7 Seater Hybrid Luxury MPV'
   },
   {
     image: '/images/white_tempo_traveller.png',
     fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85',
     title: 'Force Tempo Traveller (White)',
     tag: '12-26 Seater Tourist Van'
+  },
+  {
+    image: '/images/white_innova_crysta.png',
+    fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2000&q=85',
+    title: 'Toyota Innova Crysta (White)',
+    tag: '6-7 Seater Premium MPV'
   }
 ];
 
@@ -137,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-xl text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Travel with the most trusted Travel Agency in Udaipur offering luxury white cabs, Force Urbania, Swift Dzire, Innova Crysta, and Tempo Travellers for local &amp; outstation tours.
+              Travel with the most trusted Travel Agency in Udaipur offering luxury white fleet including Force Urbania (White), Toyota Innova Hycross, Force Tempo Traveller (White), and Toyota Innova for local &amp; outstation tours.
             </motion.p>
 
             {/* Call to Action Buttons */}
