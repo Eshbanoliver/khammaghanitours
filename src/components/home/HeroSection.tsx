@@ -117,6 +117,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </AnimatePresence>
             </div>
 
+            {/* Mobile & Desktop Fleet Quick Selector Chips */}
+            <div className="flex items-center justify-center lg:justify-start gap-2 overflow-x-auto pb-1 scrollbar-none">
+              {CAR_STOCK_SLIDES.map((slide, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-extrabold whitespace-nowrap transition-all flex items-center gap-1.5 border ${
+                    currentSlide === idx
+                      ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 border-amber-300 shadow-md shadow-orange-500/30 scale-105'
+                      : 'bg-slate-900/80 text-slate-300 border-slate-700/80 hover:bg-slate-800'
+                  }`}
+                >
+                  <Car className="w-3.5 h-3.5 shrink-0" />
+                  <span>{slide.title.replace(' (White)', '')}</span>
+                </button>
+              ))}
+            </div>
+
             {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

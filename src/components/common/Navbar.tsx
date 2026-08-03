@@ -33,9 +33,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { name: 'Services & Fleet', path: '/services' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact Us', path: '/contact' },
+  ];
+
+  const mobileFleet = [
+    {
+      name: 'Force Urbania (White)',
+      tag: '10-17 Seater Executive',
+      image: '/images/white_force_urbania.png',
+      fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Toyota Innova Hycross',
+      tag: '6-7 Seater Hybrid MPV',
+      image: '/images/white_innova_hycross.png',
+      fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Force Tempo Traveller',
+      tag: '12-26 Seater Tourist Van',
+      image: '/images/white_tempo_traveller.png',
+      fallback: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Toyota Innova Crysta',
+      tag: '6-7 Seater Premium SUV',
+      image: '/images/white_innova_crysta.png',
+      fallback: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+    },
   ];
 
   return (
@@ -140,43 +167,99 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-slate-200 overflow-hidden shadow-2xl"
+            className="md:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 overflow-hidden shadow-2xl max-h-[85vh] overflow-y-auto"
           >
-            <div className="px-6 py-6 space-y-3">
-              {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`flex items-center justify-between px-4 py-3 rounded-2xl text-base font-extrabold transition-all ${
-                      isActive
-                        ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/20'
-                        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    <ChevronRight className="w-4 h-4 opacity-70" />
-                  </Link>
-                );
-              })}
+            <div className="px-5 py-5 space-y-4">
+              {/* Navigation Links */}
+              <div className="space-y-1.5">
+                <span className="block text-[11px] font-black uppercase tracking-widest text-slate-400 px-3">
+                  Menu Navigation
+                </span>
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`flex items-center justify-between px-4 py-2.5 rounded-2xl text-sm font-extrabold transition-all ${
+                        isActive
+                          ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-md shadow-sky-500/20'
+                          : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <ChevronRight className="w-4 h-4 opacity-70" />
+                    </Link>
+                  );
+                })}
+              </div>
 
-              <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+              {/* Our Luxury White Fleet Section in Mobile Menu */}
+              <div className="pt-3 border-t border-slate-100 space-y-2.5">
+                <div className="flex items-center justify-between px-1">
+                  <span className="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                    Our White Luxury Cars
+                  </span>
+                  <span className="text-[11px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-100">
+                    4 Models
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  {mobileFleet.map((car, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        onOpenBooking();
+                      }}
+                      className="group cursor-pointer p-2 rounded-2xl bg-slate-900 text-white border border-slate-800 hover:border-sky-500 shadow-sm flex flex-col justify-between overflow-hidden transition-all active:scale-95"
+                    >
+                      <div className="relative h-20 rounded-xl overflow-hidden mb-2 bg-slate-950">
+                        <img
+                          src={car.image}
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = car.fallback;
+                          }}
+                          alt={car.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                        <span className="absolute bottom-1 left-1.5 px-1.5 py-0.5 bg-amber-400 text-slate-950 text-[9px] font-black rounded-md">
+                          {car.tag}
+                        </span>
+                      </div>
+                      <div className="px-1 pb-1">
+                        <p className="text-xs font-extrabold leading-snug line-clamp-1 group-hover:text-amber-300">
+                          {car.name}
+                        </p>
+                        <p className="text-[10px] font-bold text-sky-400 mt-0.5 flex items-center gap-1">
+                          Book Now &rarr;
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full py-3.5 bg-sky-50 border border-sky-200 text-sky-700 font-extrabold rounded-2xl text-center shadow-2xs"
+                  className="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-extrabold rounded-2xl text-center shadow-md shadow-sky-500/20 text-sm"
                 >
                   Book Your Trip Online
                 </button>
 
                 <a
                   href={`tel:${BUSINESS_INFO.rawPhone}`}
-                  className="w-full py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black rounded-2xl flex items-center justify-center gap-2 shadow-md shadow-orange-500/20"
+                  className="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black rounded-2xl flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 text-sm"
                 >
-                  <svg className="w-5 h-5 fill-slate-950" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-slate-950" viewBox="0 0 24 24">
                     <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                   <span>Call {BUSINESS_INFO.phone}</span>
