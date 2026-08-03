@@ -56,7 +56,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenBooking }) => {
             <span>•</span>
             <div className="flex items-center gap-1.5 text-amber-400 font-bold">
               <Star className="w-4 h-4 fill-amber-400" />
-              <span>E-E-A-T Verified</span>
+              <span>100% Verified Quality</span>
             </div>
           </div>
         </div>
@@ -208,10 +208,10 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenBooking }) => {
           {/* Section 4 */}
           <section className="p-8 bg-slate-900 text-white rounded-3xl space-y-6 shadow-xl">
             <h2 className="text-2xl font-black text-white">
-              E-E-A-T Guarantee: Trust, Safety &amp; Verified Excellence
+              Trust, Safety &amp; Verified Excellence
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed font-medium">
-              Khammaghani Travelling &amp; Holidays Udaipur adheres strictly to high E-E-A-T standards. Every chauffeur undergoes rigorous background checks and possesses over 5+ years of highway driving experience. For instant bookings or tour planning, contact our desk directly at <strong className="text-amber-400">077280 96547</strong>.
+              Khammaghani Travelling &amp; Holidays Udaipur guarantees maximum comfort and passenger safety. Every chauffeur undergoes rigorous background checks and possesses over 5+ years of highway driving experience. For instant bookings or tour planning, contact our desk directly at <strong className="text-amber-400">077280 96547</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <button
