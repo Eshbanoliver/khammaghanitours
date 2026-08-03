@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     { name: 'About Us', path: '/about' },
     { name: 'Services & Fleet', path: '/services' },
     { name: 'Testimonials', path: '/testimonials' },
-    { name: 'SEO Blog', path: '/blog' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-4 py-2 text-xs sm:text-sm font-extrabold rounded-full transition-all duration-300 ${
+                className={`relative px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-extrabold rounded-full transition-all duration-300 whitespace-nowrap ${
                   isActive
                     ? 'text-white'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
