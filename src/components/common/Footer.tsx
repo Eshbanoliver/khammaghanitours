@@ -77,6 +77,7 @@ export const Footer: React.FC = () => {
                 { label: 'About Our Company', path: '/about' },
                 { label: 'Our Travel Services', path: '/services' },
                 { label: 'Customer Reviews', path: '/testimonials' },
+                { label: 'SEO Travel Blog', path: '/blog' },
                 { label: 'Contact Us', path: '/contact' },
               ].map((link) => (
                 <li key={link.path}>

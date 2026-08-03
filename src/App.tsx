@@ -13,6 +13,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage').then((m) => ({ default:
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then((m) => ({ default: m.ServicesPage })));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage').then((m) => ({ default: m.TestimonialsPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
+const BlogPage = lazy(() => import('./pages/BlogPage').then((m) => ({ default: m.BlogPage })));
 
 // Scroll to Top on page transition
 const ScrollToTopOnNavigate: React.FC = () => {
@@ -69,6 +70,7 @@ export const AppContent: React.FC = () => {
             <Route path="/services" element={<ServicesPage onOpenBooking={handleOpenBooking} />} />
             <Route path="/testimonials" element={<TestimonialsPage onOpenBooking={() => handleOpenBooking()} />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage onOpenBooking={() => handleOpenBooking()} />} />
             <Route path="*" element={<HomePage onOpenBooking={handleOpenBooking} />} />
           </Routes>
         </Suspense>
