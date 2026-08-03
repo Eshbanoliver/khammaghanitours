@@ -13,7 +13,7 @@ export const SEO: React.FC<SEOProps> = ({
   title = `${BUSINESS_INFO.name} | Best Travel Agency & Taxi Service in Udaipur`,
   description = `Khammaghani Travelling & Holidays Udaipur is the best travel agency in Udaipur offering luxury taxi service, Udaipur local sightseeing, car rentals, Udaipur to Mount Abu cabs, and Rajasthan tour packages at affordable prices.`,
   keywords = `077280 96547, 07728096547, 7728096547, 77280 96547, +917728096547, Call 077280 96547, Travel Agency 077280 96547, Taxi Service 077280 96547, Best Travel Agency in Udaipur, Travel Agency Udaipur, Taxi Service Udaipur, Car Rental in Udaipur, Udaipur Taxi Service, Udaipur Tour Packages, Rajasthan Tour Packages, Udaipur to Mount Abu Cab, Udaipur to Jodhpur Taxi, Local Sightseeing Udaipur, Holiday Packages Rajasthan, Cab Booking Udaipur, Tourist Taxi Udaipur, Airport Taxi Udaipur`,
-  canonicalUrl = 'https://khammaghanitours.com',
+  canonicalUrl = 'https://udaipurbesttaxiservice.com',
 }) => {
   const schemaOrgJSONLD = [
     {

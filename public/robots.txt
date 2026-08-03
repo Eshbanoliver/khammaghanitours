@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://udaipurbesttaxiservice.com
+
+# Sitemap location
+Sitemap: https://udaipurbesttaxiservice.com/sitemap.xml
