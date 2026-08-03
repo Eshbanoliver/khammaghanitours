@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment & Credentials
+deploy.js
+deploy*.js
+
