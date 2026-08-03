@@ -14,7 +14,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenBooking }) => {
       <SEO
         title="Best Travel Agency in Udaipur | Top Cab & Taxi Service | Call 077280 96547"
         description="Looking for the best travel agency in Udaipur or trusted cab service in Udaipur? Khammaghani Travelling & Holidays offers luxury Udaipur taxi service, outstation cabs, and customized tour packages. Call 077280 96547."
-        keywords="best travel agency in udaipur, travel agency in udaipur, cab service in udaipur, udaipur taxi servcie, 077280 96547, Udaipur tour packages, outstation taxi Udaipur"
+        keywords="car rental in udaipur, best taxi service in udaipur, luxury taxi service in udaipur, cab service in udaipur, udaipur taxi service, best travel agency in udaipur, travel agency in udaipur, 077280 96547, udaipur local sightseeing taxi, innova crysta taxi in udaipur, tempo traveller in udaipur, udaipur airport cab service, udaipur to mount abu cab"
         canonicalUrl="https://udaipurbesttaxiservice.com/blog"
       />
 
